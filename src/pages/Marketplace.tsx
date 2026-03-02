@@ -8,11 +8,16 @@ import {
 } from "./Marketplace.styles";
 
 export default function Marketplace() {
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    window.location.href = "/login";
+  }
   return (
     <Container>
       <Header>
         <Title>Marketplace de Trocas</Title>
-        <button>Sair</button>
+        <button onClick={handleLogout}>Sair</button>
       </Header>
 
       <Content>
