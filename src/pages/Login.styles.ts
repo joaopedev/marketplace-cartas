@@ -9,16 +9,21 @@ export const Container = styled.div`
 
 export const LeftSide = styled.div`
   width: 70%;
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background-color: #191919;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 `;
 
 export const LogoWrapper = styled.div`
-  font-size: 2.5rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 70%;
+    height: auto;
+  }
 `;
 
 export const RightSide = styled.div`
@@ -61,14 +66,14 @@ export const Button = styled.button`
   padding: 0.8rem;
   border-radius: 6px;
   border: none;
-  background-color: #1e3a8a;
+  background-color: #191919;
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
 
   &:hover {
-    background-color: #2563eb;
+    background-color: grey;
   }
 `;
 
@@ -79,11 +84,11 @@ export const RegisterText = styled.p`
 `;
 
 export const StyledLink = styled(Link)`
-  color: #1e3a8a;
+  color: #191919;
   font-weight: bold;
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: grey;
   }
 `;
