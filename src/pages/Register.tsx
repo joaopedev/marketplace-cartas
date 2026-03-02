@@ -1,23 +1,23 @@
+import { LeftSide, Button } from "./Login.styles";
 import {
   Container,
-  LeftSide,
   LogoWrapper,
   RightSide,
   FormWrapper,
   Title,
   Form,
   Input,
-  Button,
   LoginText,
   StyledLink,
 } from "./Register.styles";
+import Logo from "../assets/image.png";
 
 export default function Register() {
   return (
     <Container>
       <LeftSide>
         <LogoWrapper>
-          <h1>Marketplace</h1>
+          <img src={Logo} alt="Logo INMETA" />
         </LogoWrapper>
       </LeftSide>
 
