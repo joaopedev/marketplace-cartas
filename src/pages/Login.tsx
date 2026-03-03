@@ -15,7 +15,7 @@ import {
 import Logo from "../assets/image.png";
 
 export default function Login() {
-  const { login } = useLogin();
+  const { login, loading } = useLogin();
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -43,7 +43,9 @@ export default function Login() {
           <Form onSubmit={handleSubmit}>
             <Input type="email" name="email" placeholder="Email" />
             <Input type="password" name="password" placeholder="Senha" />
-            <Button type="submit">Entrar</Button>
+            <Button type="submit" disabled={loading}>
+              {loading ? "Entrando..." : "Entrar"}
+            </Button>
           </Form>
           <RegisterText>
             Não possui conta?{" "}
