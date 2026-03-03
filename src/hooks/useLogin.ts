@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
 import { api } from "../api/axios";
 import { useAuthStore } from "../store/auth.store";
 import type { AuthResponse } from "../types/auth.types";
@@ -18,10 +20,15 @@ export function useLogin() {
 
       setAuth(response.data);
 
+      toast.success("Login realizado com sucesso!");
+
       navigate("/marketplace");
     } catch (error: any) {
-      console.error(error);
-      alert(error.response?.data?.message || "Erro ao fazer login");
+      const message =
+        error?.response?.data?.message ||
+        "Erro ao fazer login. Verifique suas credenciais.";
+
+      toast.error(message);
     } finally {
       setLoading(false);
     }
